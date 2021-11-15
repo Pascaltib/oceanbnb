@@ -1,0 +1,21 @@
+<div class="yacht-container container-fluid">
+  <h2 class="page-title">ALL OF OUR YATCHS</h2>
+
+  <div class="row justify-content-center">
+      <% @yachts.each do |yacht| %>
+      <div class="col-12 col-lg-4 col-xl-3">
+        <div class="card" style="">
+            <img src="<%= yacht.image_url %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to yacht.name, yacht_path(yacht) %></h5>
+              <p class="card-text"><%= yacht.description %></p>
+              <p class="card-text"><%= yacht.capacity %></p>
+              <a href="<% link_to yacht.name, yacht_path(yacht) %>" class="btn btn-primary">View</a>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <p class="btn btn-info mr-1"><%= link_to "Go back", root_path %></p>
+</div>

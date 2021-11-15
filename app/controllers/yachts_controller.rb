@@ -7,4 +7,7 @@ class YachtsController < ApplicationController
 
   private
 
+  def index
+    @yachts = Yacht.all
+  end
 end

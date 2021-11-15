@@ -1,0 +1,23 @@
+<h2>Yachts list</h2>
+
+<ul class="list-unstyled">
+  <% @yachts.each do |yacht| %>
+    <li><%= link_to yacht.name, yacht_path(yacht) %></li>
+    <li><%= yacht.description %></li>
+    <li><%= yacht.capacity %></li>
+    <li><%= yacht.location %></li>
+    <li><img src="<%= yacht.image_url %>" alt=""></li>
+    <br>
+  <% end %>
+</ul>
+
+<p class="btn btn-info"><%= link_to 'New Restaurant', new_restaurant_path %></p>
+</div>
+
+t.string "name"
+    t.text "description"
+    t.integer "capacity"
+    t.string "location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "image_url"

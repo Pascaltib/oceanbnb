@@ -1,0 +1,27 @@
+<%# container of the page %>
+<div class="container">
+    <%# container for the image,name and description  %>
+    <div class="bg-white rounded shadow" id="card" >
+    <%# container for image and name %>
+      <div class="poster">
+        <%= image_tag @yacht.image_url, alt: @yacht.name %>
+      </div>
+      <%# name, address %>
+      <div class="description-box">
+        <strong><h2><%= @yacht.name %> </h2> <span class="text-muted font-weight-normal"> <p class="mb-0 ">•Capacity:</p><%= @yacht.capacity %></span></strong>
+        <small class="text-muted"> <p class="mb-0 mt-2">•Location:</p><%= @yacht.location %></small>
+        <div>
+          <i class="fas fa-angle-double-right"></i> <small class="flex-grow-1"><%= @yacht.description%></small>
+        </div>
+    </div class="">
+    <%# reservation button %>
+    <div class="space-button">
+      <a href="#" class="reservation-button btn btn-primary">Reserve Now</a>
+    </div>
+
+  </div>
+</div>
+
+
+
+              <%# <small class="text-right flex-shrink-0"><%= link_to '####',------_path(), method: :reserve</small> %>

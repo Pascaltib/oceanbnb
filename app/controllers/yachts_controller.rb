@@ -5,8 +5,6 @@ class YachtsController < ApplicationController
     @yacht = Yacht.find(params[:id])
   end
 
-  private
-
   def index
     @yachts = Yacht.all
   end

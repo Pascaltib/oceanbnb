@@ -3,8 +3,16 @@
   height: auto;
   text-align: center;
 }
-.reservation-button {
-  background-color: red;
+
+.space-button{
+  margin: 50px;
   text-decoration: none;
-  padding: 4px 8px;
+
+}
+.reservation-button {
+  background-color: blue;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: blanchedalmond ;
 }

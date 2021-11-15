@@ -3,11 +3,8 @@ class YachtsController < ApplicationController
 
   def show
     @yacht = Yacht.find(params[:id])
-    @reviews = Review.new
   end
 
   private
-  def yacht_params
-    params.require(:yacht).permit(:name, :description, :capacity, :location, :image_url)
-  end
+
 end

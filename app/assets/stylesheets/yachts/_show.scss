@@ -17,6 +17,8 @@
   max-width: fit-content;
   padding-bottom: 40px;
   display: inline-block;
+  height: auto;
+
 }
 
 // RESERVATION container
@@ -58,10 +60,13 @@
 }
 
 // description text
-#description {
+.description {
+  min-height: 20vh;
+  height: auto;
+  contain: size;
   font-family: 'M PLUS Code Latin', sans-serif;
   contain: size;
-  padding: 0 8px;
+  padding: 20px;
 }
 #card h2 {
   font-weight: 600;
@@ -72,4 +77,15 @@ float: right;
 }
 .date{
   margin-bottom: 16px;
+}
+
+
+.yatch-details {
+  display: flex;
+  justify-content: space-around;
+  font-size: 16px;
+}
+
+.capacity {
+  font-size: 16px;
 }

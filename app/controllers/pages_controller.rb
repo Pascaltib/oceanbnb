@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def profile
+    @users = User.all
+    @user = current_user
+  end
 end

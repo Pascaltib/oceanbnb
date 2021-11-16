@@ -1,42 +1,57 @@
 <%# container of the page %>
-<div class="container cl-12">
-  <%# container for the image,name and description  %>
+<div class="container">
+
+  <%# CARD container  %>
   <div class="bg-white rounded shadow" id="card" >
-      <%# container for image and name %>
-    <div class="poster">
-      <%= image_tag @yacht.image_url, alt: @yacht.name %>
+
+    <%= image_tag @yacht.image_url, alt: @yacht.name %>
+    <strong><h2><%= @yacht.name %> </h2> <span class="text-muted font-weight-normal"> <p class="mb-0 ">•Location:</p><%= @yacht.location %></span></strong>
+    <small class="text-muted"> <p class="mb-0 mt-2">•Capacity:</p><%= @yacht.capacity %></small>
+    <div class="description">
+      <p id="description"><%= @yacht.description%></p>
     </div>
-      <%# name, address %>
-    <div class="description-box">
-      <strong><h2><%= @yacht.name %> </h2> <span class="text-muted font-weight-normal"> <p class="mb-0 ">•Location:</p><%= @yacht.location %></span></strong>
-      <small class="text-muted"> <p class="mb-0 mt-2">•Capacity:</p><%= @yacht.capacity %></small>
-      <div class="description">
-          <p class="flex-grow-1" id="description"><i class="fas fa-angle-double-right"></i> <%= @yacht.description%></p>
-      </div>
-    </div>
+
   </div>
 
-  <div class="bg-white rounded shadow" id="reservation-box">
-    <%# div for calendar %>
-    <div>
-      <%# form for calendar should be here %>
-    </div>
+  <div class="card-reserve">
+      <%# RESERVATION-BOX container %>
+    <div class="bg-white rounded shadow" id="reservation-box">
 
-    <div>
-      <%# reservation button and back button %>
+      <%# calendar %>
+      <div class="date">
+        <input type="date">
+      </div>
+      <span class="text-muted font-weight-bold"> <p class="mb-0 ">• price:  € <%= @yacht.price %>/ day</p> </span></strong>
+      <%# reservation button %>
       <div class="space-button">
-          <%= link_to yachts_path, class: "back-button btn btn-danger" do  %>
+        <a href="#" class="reservation-button btn btn-success">Reserve Now</a>
+      </div>
+
+    </div>
+
+    <%# amenities and back button %>
+    <div class="bg-white rounded shadow" id="amenities">
+      <ul>
+        <th>Amenities</th>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+      </ul>
+      <div class="b-button">
+      <%= link_to yachts_path, class: "back-button btn btn-primary" do  %>
         Back
-        <% end %>
-        <a href="#" class="reservation-button btn btn-primary">Reserve Now</a>
+      <% end %>
       </div>
     </div>
   </div>
+
+  <div class="bg-white rounded shadow" id="map-container">
+    <h2>this is for the map</h2>
+  </div>
+
 </div>
 
 
 <%= render "footer" %>
-
-
-
-              <%# <small class="text-right flex-shrink-0"><%= link_to '####',------_path(), method: :reserve</small> %>

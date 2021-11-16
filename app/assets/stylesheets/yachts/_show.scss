@@ -1,50 +1,75 @@
+// MAIN CONTAINER
 .container {
   width: auto;
   height: 100%;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 60px;
-  display: inline-flex;
-  margin-left: 40px;
-
+  display: flex;
+  position: relative;
+  padding: 4px;
+  align-items: flex-start;
 }
 
-.space-button{
-  margin: 50px;
-  text-decoration: none;
-
+// CARD container
+#card {
+  margin-right: 40px;
+  max-width: fit-content;
+  padding-bottom: 40px;
+  display: inline-block;
 }
 
-.reservation-button {
+// RESERVATION container
+#reservation-box {
+  background-color: white;
+  size: 100%;
+  position: relative;
+  padding: 20px;
+  min-width: fit-content;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+// MAP container
+#map-container {
   background-color: blue;
+  display: inline-block;
+  margin: 0 40px;
+}
+// reserve button
+.reservation-button {
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 8px;
-  color: blanchedalmond ;
+  color: blanchedalmond;
+  margin: 8px;
 }
-#card {
-  padding: 8px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  position: relative;
-}
-.description-box {
-  font-size: 20px;
-}
-#description {
-  font-family: 'M PLUS Code Latin', sans-serif;
-}
-#reservation-box {
-  background-color: white;
-  float: left;
-  size: 100%;
-  position: relative;
-}
-
-
+// back button
 .back-button {
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 8px 20px;
   border-radius: 8px;
-  color: blanchedalmond ;
+  color: blanchedalmond;
+  margin: 8px;
+  border: none;
+  margin-bottom: 20px;
+}
+.back-button:hover {
+  background-color: rgb(53, 53, 252);
+}
+
+// description text
+#description {
+  font-family: 'M PLUS Code Latin', sans-serif;
+  contain: size;
+  padding: 0 8px;
+}
+#card h2 {
+  font-weight: 600;
+}
+
+.card-reserve {
+float: right;
+}
+.date{
+  margin-bottom: 16px;
 }

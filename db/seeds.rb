@@ -1,24 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+require 'nokogiri'
+url = "https://www.superyachttimes.com/yachts/order:gross-tonnage:descending"
+html_file = URI.open(url).read
+html_doc = Nokogiri::HTML(html_file)
+noko_arr = html_doc.search(".yachts .yacht .visual .bg-img")
+
+
 puts "Clearing database"
 Booking.delete_all
 User.delete_all
 Yacht.delete_all
 arr = ["Ibiza", "Monaco"]
-25.times do
+count = 0
+24.times do
   Yacht.create!(
     {
       name: Faker::Movies::HarryPotter.character,
       description: Faker::Books::Dune.quote,
-      capacity: rand(2000),
+      capacity: rand(20..2000),
       location: arr.sample,
-      image_url: "https://source.unsplash.com/random/200x200"
+      image_url: noko_arr[count].attribute('style').value.match(/'(.+)'/)[1],
+      price: rand(5000..1000000)
     }
   )
+  count += 1
 end
 puts "Database recreated!"

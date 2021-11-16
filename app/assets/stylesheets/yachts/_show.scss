@@ -2,6 +2,7 @@
   width: 100%;
   height: auto;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .space-button{
@@ -9,10 +10,19 @@
   text-decoration: none;
 
 }
-// .reservation-button {
-//   background-color: blue;
-//   text-decoration: none;
-//   padding: 8px 10px;
-//   border-radius: 8px;
-//   color: blanchedalmond ;
-// }
+
+.reservation-button {
+  background-color: blue;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: blanchedalmond ;
+}
+#card {
+  padding: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.description {
+  font-size: 16px;
+}

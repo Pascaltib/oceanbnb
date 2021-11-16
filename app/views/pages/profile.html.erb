@@ -14,34 +14,54 @@
     rentals/bookings and their information
 
 
-    %>
+<%# <%= video_tag "background_video_3.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "myVideo" %>
 
-    <div class="profile_page container">
+<%# main container %>
+<div class="profile_page container">
+  <%# content container %>
+  <div class="profile-container container-fluid">
+    <h2 class="page-title">Welcome <strong><%= @user.first_name.capitalize %></strong> to your profile</h2>
+    <%# card container %>
+    <div class="row justify-content-evenly">
+      <% @users.each do |user| %>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card" id="user-details">
+            <div class="card-body">
+              <p class="card-text">First Name: <%= user.first_name %></p>
+              <p class="card-text">Last Name: <%= user.last_name %></p>
+              <p class="card-text">Email: <%= user.email %></p>
+              <p class="card-text">Country: <%= user.location %></p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="row justify-content-evenly">
+          <div class="card" id="user-history">
+            <p>Your rental history:</p>
+            <ol>
+              <li>hesklfgpidshgaoehguihf</li>
+              <li>asdfñodhiWHFIUWDHGASDASD</li>
+              <li>asfnshoghaeoñgñogadsgvbsb</li>
+              <li>sgñbihsdagjfohgowijgihguir</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <%# button edit %>
+      <div class="edit-btn">
+        <% end %>
+        <%= link_to edit_user_registration_path do%>
+          <button class="btn btn-flat btn-primary">edit</button>
+        <% end %>
+      </div>
 
     </div>
 
-
-<%# <%= video_tag "background_video_3.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "myVideo" %>
-
-<div class="profile-container container-fluid">
-<h3 class="page-title">Welcome to your profile</h3>
-
-<div class="row justify-content-evenly">
-    <% @users.each do |user| %>
-    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-      <div class="card">
-          <div class="card-body">
-            <p class="card-text"><%= user.last_name %></p>
-            <p class="card-text"><%= user.email %></p>
-            <p class="card-text"><%= user.phone_number %></p>
-            <p class="card-text"><%= user.location %></p>
-            </div>
-          </div>
-      </div>
-      </div>
-    <% end %>
   </div>
+
+
 </div>
 
 

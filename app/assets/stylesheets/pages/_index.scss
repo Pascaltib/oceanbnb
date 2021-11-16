@@ -29,6 +29,8 @@ body{
 .card-button{
   font-size: 10px;
   margin-bottom: 0;
+  border-radius: 8px;
+  padding: auto 4px;
 }
 
 .card-button a{
@@ -42,7 +44,7 @@ body{
   border: none;
   font-size: 12px;
   box-shadow: 2px 2px 10px rgba($color: #dedede22, $alpha: 1.0);
-  height: 35vh;
+  height: 40vh;
   overflow: hidden;;
 }
 
@@ -51,7 +53,7 @@ body{
   border-top-right-radius: 8px;
   object-fit: cover;
   object-position: center;
-  height: 40%;
+  height: 50%;
 }
 
 .card-bottom{
@@ -69,13 +71,14 @@ body{
   overflow: hidden;
 }
 
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
+// /* Style the video: 100% width and height to cover the entire window */
+.myVideo {
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  z-index: 0;
 }
 
 /* Add some content at the bottom of the video/page */
@@ -86,4 +89,5 @@ body{
   color: #f1f1f1;
   width: 100%;
   padding: 20px;
+  z-index: 0;
 }

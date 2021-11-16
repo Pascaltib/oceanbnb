@@ -1,20 +1,18 @@
-<video autoplay muted loop id="myVideo">
-  <source src="/../../assets/videos/background_video.mp4" type="video/mp4">
-</video>
+<%# <%= video_tag "background_video_3.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "myVideo" %>
 
 <div class="yacht-container container-fluid">
-  <h3 class="page-title">ALL OF OUR YATCHS</h3>
+  <h3 class="page-title">Discover all of our Yachts</h3>
 
   <div class="row justify-content-evenly">
       <% @yachts.each do |yacht| %>
-      <div class="col-6 col-lg-4 col-xl-3">
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
         <div class="card">
             <img src="<%= yacht.image_url %>" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title"><%= link_to yacht.name, yacht_path(yacht) %></h5>
               <p class="card-text"><strong>Description:</strong> <%= yacht.description %></p>
               <div class="card-bottom d-flex justify-content-between">
-                <p class="card-text"><strong>Capacity:</strong> <%= yacht.capacity %></p>
+                <p class="card-text"><strong>Price per day: €</strong><%= yacht.price %></p>
                 <p class="card-button btn btn-primary"><%= link_to "View", yacht_path(yacht) %></p>
               </div>
             </div>
@@ -23,5 +21,6 @@
     <% end %>
   </div>
 </div>
+
 
 <%= render "footer" %>

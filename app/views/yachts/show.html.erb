@@ -4,11 +4,23 @@
   <%# CARD container  %>
   <div class="bg-white rounded shadow" id="card" >
 
+
     <%= image_tag @yacht.image_url, alt: @yacht.name %>
-    <strong><h2><%= @yacht.name %> </h2> <span class="text-muted font-weight-normal"> <p class="mb-0 ">•Location:</p><%= @yacht.location %></span></strong>
-    <small class="text-muted"> <p class="mb-0 mt-2">•Capacity:</p><%= @yacht.capacity %></small>
+    <div class="name">
+        <strong><h2><%= @yacht.name %> </h2></strong>
+    </div>
+    <div class="yatch-details">
+
+      <div class="location">
+        <span class="text-muted font-weight-normal"> Location: <%= @yacht.location %></span>
+      </div>
+      <div class="capacity">
+        <span class="text-muted font-weight-normal"> Capacity: <%= @yacht.capacity %> pax</span>
+      </div>
+    </div>
+
     <div class="description">
-      <p id="description"><%= @yacht.description%></p>
+      <%= @yacht.description%>
     </div>
 
   </div>

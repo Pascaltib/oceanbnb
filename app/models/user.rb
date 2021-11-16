@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :yachts, through: :bookings, dependent: :destroy
 
-  validates :fist_name, presence: true
+  validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :location, presence: true

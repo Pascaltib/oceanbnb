@@ -35,7 +35,6 @@
     margin-bottom: 30px;
     text-align: center;
   }
-
 }
 
 .form-actions{
@@ -45,5 +44,11 @@
 .sign-up-button{
   padding: 2px 8px;
   font-size: 8px;
+  border-radius: 16px;
+}
+
+.btn{
+  color: white;
+  padding: 4px 10px;
   border-radius: 16px;
 }

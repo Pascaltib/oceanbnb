@@ -10,18 +10,18 @@
   </div>
 </div>
 <div class="home-card-container">
-  <h2 style="font-family: Inter">Discover Oceanbnb Experience</h2>
+  <h1 style="font-family: Inter">Discover Oceanbnb Experience</h1>
   <div class="row justify-content-between">
     <div class="home-card" style="background-image: url(<%= image_path "home_card"%>);">
       <div class="home-card-header">Things to do on your trip</div>
       <%= link_to yachts_path, class:"m-0 p-0" do%>
-        <button class="btn btn-light">Experiences</button>
+        <div class="btn btn-light home-card-button">Experiences</div>
       <% end %>
     </div>
     <div class="home-card" style="background-image: url(<%= image_path "home_card2"%>);">
       <div class="home-card-header">Things to do from home</div>
       <%= link_to yachts_path, class:"m-0 p-0" do%>
-        <button class="btn btn-light">Experiences</button>
+        <div class="btn btn-light home-card-button">Online Experiences</div>
       <% end %>
     </div>
   </div>

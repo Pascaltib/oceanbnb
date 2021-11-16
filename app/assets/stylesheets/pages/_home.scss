@@ -1,15 +1,21 @@
 // Specific CSS for your home-page
 .home-card-container{
   padding: 0;
-  margin: 5vh 5% 5vh 5%;
+  margin: 6vh 5% 5vh 5%;
 }
 
 .home-card{
-  margin: 0;
-  padding: 0;
+  margin: 5vh 0 0 0;
+  padding: 2%;
   width: 49%;
   height: 90vh;
-  background-size: cover;
-  background-position: center;
+  background-size: 120%;
+  background-position: 0% 50%;
   border-radius: 12px;
+  color: white;
+  font-weight: bolder;
+}
+
+.home-card-header{
+  font-size: 34px;
 }

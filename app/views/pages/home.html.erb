@@ -1,29 +1,30 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://yachtcharters.rentals/wp-content/uploads/2018/05/home-banner.jpg);">
-  <div class="container">
-    <div class= "row align-items-center m-0 p-0" style="color:white;">
-      <h1 class="mb-2" id="banner-typed-text"></h1>
+  <div class="container row flex-column ml-5">
+    <div class="row align-items-center" style="color:white;">
+      <h1 class="mb-2 ml-3" id="banner-typed-text"></h1>
     </div>
-    <div class="row flex-column align-items-start ml-0">
-      <p class="m-0 p-0">Live a life of luxury and pleasure.</p>
-      <%= link_to yachts_path, class:"m-0 p-0" do%>
-      <button class="btn btn-flat btn-success">Rent now</button>
-      <% end %>
-    </div>
+    <p class="m-0 p-0">Live a life of luxury and pleasure.</p>
+    <%= link_to yachts_path, class:"m-0 p-0" do%>
+    <button class="btn btn-flat btn-success">Rent now</button>
+    <% end %>
   </div>
 </div>
 <div class="home-card-container">
-  <h2>Discover Oceanbnb Experience</h2>
+  <h2 style="font-family: Inter">Discover Oceanbnb Experience</h2>
   <div class="row justify-content-between">
     <div class="home-card" style="background-image: url(<%= image_path "home_card"%>);">
-
+      <div class="home-card-header">Things to do on your trip</div>
+      <%= link_to yachts_path, class:"m-0 p-0" do%>
+        <button class="btn btn-light">Experiences</button>
+      <% end %>
     </div>
     <div class="home-card" style="background-image: url(<%= image_path "home_card2"%>);">
-
+      <div class="home-card-header">Things to do from home</div>
+      <%= link_to yachts_path, class:"m-0 p-0" do%>
+        <button class="btn btn-light">Experiences</button>
+      <% end %>
     </div>
   </div>
-</div>
-<div class="row justify-content-center mb-4">
-  <button class="btn btn-lg btn-success"><%= link_to "Rent now", yachts_path, style: "color: inherit; text-decoration: inherit" %></button>
 </div>
 
 <%= render "footer" %>

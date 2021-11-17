@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'profile', to: 'pages#profile'
 
-  resources :yachts, only: [:index, :show]
+  resources :yachts, only: [:index, :show] do
+    resources :bookings, only: [:create]
+  end
 
-  resources :bookings, only: [:create] do
+  resources :bookings, only: [] do
     member do
       patch :accept
       patch :reject

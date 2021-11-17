@@ -3,6 +3,8 @@ class YachtsController < ApplicationController
 
   def show
     @yacht = Yacht.find(params[:id])
+    @booking = Booking.new
+    @user = current_user
   end
 
   def index

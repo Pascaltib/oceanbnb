@@ -75,11 +75,11 @@
             </tr>
           </thead>
           <tbody>
-             <% @user_bookings.each do |yacht|%>
+             <% @user_bookings.each do |booking|%>
              <tr>
-              <td scope="col"> <%= yacht.name %> </td>
-              <td scope="col"> mm/dd/yyyy </td>
-              <td scope="col"> € <%= yacht.price %> </td>
+              <td scope="col"> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].name %> </td>
+              <td scope="col"><%= booking.starts_at %> </td>
+              <td scope="col"> € <%= number_with_delimiter(@yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price, :delimiter => ',')  %> </td>
               </tr>
               <%end%>
 

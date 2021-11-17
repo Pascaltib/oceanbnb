@@ -1,7 +1,7 @@
 body{
   margin: 0;
   padding: 0;
-  background: linear-gradient(-45deg, #fbfaff, #fbfbff, #f9fcff, #f2fffb);
+  background-color: white;
 	background-size: 400% 400%;
 	animation: gradient 5s ease infinite;
 }
@@ -60,18 +60,27 @@ body{
   height: 55vh;
   overflow: hidden;
   box-shadow: 0px 0px 5px rgb(216, 205, 255);
+  transition: 0.5s;
 }
 
 .card:hover{
-  box-shadow: 0px 0px 50px rgb(255, 255, 255);
+  box-shadow: 0px 0px 50px rgb(216, 205, 255);
   transition: 0.5s;
+
+  .card-img-top:hover{
+    opacity: 0.9;
+    transition: 0.5s;
+  }
 }
+
 
 .card-img-top{
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   object-fit: cover;
   height: 260px;
+  opacity: 1;
+  transition: 0.5s;
 }
 
 .card-bottom{
@@ -109,4 +118,11 @@ body{
   width: 100%;
   padding: 20px;
   z-index: 0;
+}
+
+.index-card-button{
+  margin-top: 15px;
+  padding: 8px 24px;
+  background-color: rgb(232, 232, 232);
+  border-radius: 24px;
 }

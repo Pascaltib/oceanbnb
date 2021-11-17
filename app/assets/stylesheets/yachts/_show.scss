@@ -5,20 +5,27 @@
   text-align: center;
   margin-top: 40px;
   margin-bottom: 60px;
-  display: flex;
   position: relative;
   padding: 4px;
-  align-items: flex-start;
 }
 
 // CARD container
 #card {
-  margin-right: 40px;
   max-width: fit-content;
-  padding-bottom: 40px;
   display: inline-block;
   height: auto;
+}
 
+.show-card-body{
+  text-align: left;
+  padding: 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+
+.show-image{
+  width: 100%;
 }
 
 // RESERVATION container
@@ -27,15 +34,14 @@
   size: 100%;
   position: relative;
   padding: 20px;
-  min-width: fit-content;
-  display: inline-block;
-  margin-bottom: 40px;
 }
 // MAP container
 #map-container {
   background-color: blue;
-  display: inline-block;
-  margin: 0 40px;
+}
+
+.first-show-card{
+  padding: 0;
 }
 // reserve button
 .reservation-button {
@@ -53,12 +59,10 @@
   color: blanchedalmond;
   margin: 8px;
   border: none;
-  margin-bottom: 20px;
 }
 .back-button:hover {
   background-color: rgb(53, 53, 252);
 }
-
 // description text
 .description {
   min-height: 20vh;
@@ -72,13 +76,9 @@
   font-weight: 600;
 }
 
-.card-reserve {
-float: right;
-}
 .date{
   margin-bottom: 16px;
 }
-
 
 .yatch-details {
   display: flex;
@@ -88,4 +88,12 @@ float: right;
 
 .capacity {
   font-size: 16px;
+}
+
+.ammenities-body{
+  text-align: center;
+}
+
+.ammenities-body li{
+  font-size: 12px;
 }

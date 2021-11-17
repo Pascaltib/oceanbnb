@@ -1,58 +1,59 @@
-<%# container of the page %>
-<div class="container">
-
-  <%# CARD container  %>
-  <div class="bg-white rounded shadow" id="card" >
-
-
-    <%= image_tag @yacht.image_url, alt: @yacht.name %>
-    <div class="name">
-        <strong><h2><%= @yacht.name %> </h2></strong>
-    </div>
-    <div class="yatch-details">
-
-      <div class="location">
-        <span class="text-muted font-weight-normal"> Location: <%= @yacht.location %></span>
-      </div>
-      <div class="capacity">
-        <span class="text-muted font-weight-normal"> Capacity: <%= @yacht.capacity %> pax</span>
+<% # container of the page %>
+<div class="container justify-content-around align-items-center">
+  <div class="row justify-content-center">
+    <% # CARD container %>
+    <div class="first-show-card bg-white rounded shadow col-4" id="card">
+      <img src="<%= @yacht.image_url %>" class="show-image" alt="...">
+      <div class="show-card-body">
+        <ul class="list-group">
+          <div class="list-group-item"><h5 class="name"><%= @yacht.name %></h5></div>
+          <div class="list-group-item card-text"><strong style="color: #333333">Price per day: €</strong><%= number_with_delimiter(@yacht.price, :delimiter => ',') %></div>
+          <div class="list-group-item card-text"><strong style="color: #333333">Capacity: </strong><%= @yacht.capacity %></div>
+          <div class="list-group-item"><strong style="color: #333333">Description: </strong><%= @yacht.description %></div>
+        </ul>
       </div>
     </div>
 
-    <div class="description">
-      <%= @yacht.description%>
+    <div class="reserve_ammenities col-3">
+      <div class="card-reserve">
+          <% # RESERVATION-BOX container %>
+        <div class="first-show-card bg-white rounded shadow" id="reservation-box">
+          <%= simple_form_for [@yacht, @booking] do |f| %>
+          <h4>Reserve your dates</h4>
+          <%= f.input :starts_at, as: :string, required: false, input_html: { class: "datepicker" } %>
+          <%= f.input :ends_at, as: :string, required: false, input_html: { class: "datepicker" } %>
+          <%= f.submit "Make Reservation", class: "btn btn-light index-card-button" %>
+        <% end %>
+        </div>
+      </div>
+      <br>
+      <% # amenities and back button %>
+      <div class="first-show-card bg-white rounded shadow" id="reservation-box">
+        <h4>Ammenities</h4>
+        <div class="ammenities-body">
+        <ul class="list-group ammenities-text">
+          <li class="list-group-item card-text"><strong style="color: #333333">WIFI</strong></li>
+          <li class="list-group-item card-text"><strong style="color: #333333">Pool</strong></li>
+          <li class="list-group-item card-text"><strong style="color: #333333">Jacuzzy</strong></li>
+        </ul>
+      </div>
+      </div>
+
     </div>
 
-  </div>
-
-  <div class="card-reserve">
-      <%# RESERVATION-BOX container %>
-    <div class="bg-white rounded shadow" id="reservation-box">
-      <%= simple_form_for [@yacht, @booking] do |f| %>
-        <span class="mb-0" style="font-weight:bold;">€<%= number_with_delimiter(@yacht.price, :delimiter => ',') %> per day</span>
-        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.submit "Make Reservation", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-
-    <%# amenities and back button %>
-    <div class="bg-white rounded shadow" id="amenities">
-      Ammenities
-      <div class="b-button">
-      <%= link_to yachts_path, class: "back-button btn btn-primary" do  %>
-        Back
-      <% end %>
+    <div class="first-show-card bg-white rounded shadow col-4" id="map-container">
+      <div id="map" class = ""
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
   </div>
-
-  <div id="map" class = ""
-    style="width: 100%; height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
+        <div class="b-button">
+          <%= link_to yachts_path, class: "btn btn-light index-card-button" do %>
+          Back
+          <% end %>
+        </div>
 </div>
 
 <%= render "footer" %>

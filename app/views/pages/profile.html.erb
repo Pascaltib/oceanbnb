@@ -17,106 +17,81 @@
 <%# <%= video_tag "background_video_3.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "myVideo" %>
 
 <%# main container %>
-<div class="profile-container " id="profile">
-  <h2 class="page-head">Welcome <strong><%= @user.first_name.capitalize %></strong> </h2>
+<div class="profile-container " id="page-bluer">
+  <div class="welcome-name">
+    <%# viewbox="0 0 100 20 %>
+    <svg viewbox="0 0 100 30">
+      <defs>
+        <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="0.5">
+          <stop offset="5%" stop-color="#326384"/>
+          <stop offset="95%" stop-color="#123752"/>
+        </linearGradient>
+        <pattern id="wave" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
+            <animateTransform
+                attributeName="transform"
+                begin="0s"
+                dur="1.5s"
+                type="translate"
+                from="0,0"
+                to="40,0"
+                repeatCount="indefinite" />
+          </path>
+        </pattern>
+      </defs>
+      <text text-anchor="middle" x="50" y="15" font-size="12" fill="url(#wave)"  fill-opacity="0.6">Welcome <%= @user.first_name.capitalize %></text>
+      <text text-anchor="middle" x="50" y="15" font-size="12" fill="url(#gradient)" fill-opacity="0.1">Welcome <%= @user.first_name.capitalize %></text>
+    </svg>
+  </div>
+
   <%# card container %>
 
-  <div class="page">
-    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-      <div class="card" id="user-details">
-        <div class="card-body">
-          <p style="font-size:20px;" class="card-text">Name:  <%= @user.first_name %></p>
-          <p style="font-size:20px;" class="card-text">Last Name: <%= @user.last_name %></p>
-          <p style="font-size:20px;" class="card-text">Email: <%= @user.email %></p>
-          <p style="font-size:20px;" class="card-text">Country: <%= @user.location %></p>
-          <%# button edit %>
-          <div class="edit-btn">
-            <%= link_to edit_user_registration_path do%>
-            <button class="btn btn-light index-card-button">edit</button>
-            <% end %>
-          </div>
-        </div>
+  <div class="page-oranger">
+
+    <div id="page-greener">
+      <p style="font-size:20px;" class="card-text">Name:  <%= @user.first_name %></p>
+      <p style="font-size:20px;" class="card-text">Last Name: <%= @user.last_name %></p>
+      <p style="font-size:20px;" class="card-text">Email: <%= @user.email %></p>
+      <p style="font-size:20px;" class="card-text">Country: <%= @user.location %></p>
+      <%# button edit %>
+      <div class="edit-btn">
+        <%= link_to edit_user_registration_path do%>
+        <button class="btn btn-light index-card-button">edit</button>
+        <% end %>
       </div>
     </div>
 
-
     <%# upcoming reservation card %>
-    <div class="card" id="user-reservation" style="overflow-y: scroll;">
+    <div class="card" id="page-reder" >
       <p> <strong>My Reservations </strong></p>
-      <table class="table table-hover">
+      <%# <table class="table table-hover" style="overflow-y: scroll;">
         <thead>
-          <tr>
-            <th scope="col"> Yacht </th>
-            <th scope="col"> Date</th>
-            <th scope="col"> Price </th>
-            <th scope="col"> Status </th>
-          </tr>
-        </thead>
-        <tbody>
-            <% @user_bookings.each do |booking|%>
-            <tr>
-            <td scope="col"> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].name %> </td>
-            <td scope="col"><%= booking.starts_at %> </td>
-            <td scope="col"> € <%= number_with_delimiter(@yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price, :delimiter => ',')  %> </td>
-            <td scope="col"><%= booking.status %> </td>
-            </tr>
-            <%end%>
+          <tr> %>
+          <div class="row" id="table-yellower">
+            <div> Yacht </div>
+            <div> Date</div>
+            <div> Price </div>
+            <div> Status </div>
+          </div>
 
+          <div class="row" id="table-pinker">
+            <% @user_bookings.each do |booking|%>
+            <div> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].name %> </div>
+            <div><%= booking.starts_at %> </div>
+            <div> € <%= number_with_delimiter(@yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price, :delimiter => ',')  %> </div>
+            <div><%= booking.status %> </div>
+            <%end%>
+          </div>
+
+<%#
         </tbody>
-      </table>
+      </table> %>
     </div>
 
   </div>
 </div>
 
 
-<%# comment %>
-
-
-      <%# history card %>
-      <%# <div class="card" id="user-history" style="overflow-y: scroll;">
-        <p> <strong>Your rental history: </strong></p>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Reciept number</th>
-              <th scope="col">Date</th>
-              <th scope="col">Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>This will be a link######################</td>
-              <td>dd/mm/yyyy</td>
-              <td>price</td>
-            </tr>
-
-          </tbody>
-        </table> %>
-
-<%#
-        <div class="show-more">
-          <%= link_to edit_user_registration_path do%>
-          <%# <a href="#">Show all</a> %>
-          <%# <% end %>
-        <%# </div> %>
-      <%# </div> %>
-
-    <%# </div> %>
-
-<%# ---------------------apply the screen resolution thing to show and profile pages-------------------- %>
-
-<%# animated text %>
-<%#
-<div>Escape</div>
-<div>
-  <span>into amazing experiences</span>
-</div>
-
-
-<p>a css3 animation demo</p> %>
 
 
 

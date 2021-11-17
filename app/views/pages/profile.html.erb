@@ -25,11 +25,10 @@
     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
       <div class="card" id="user-details">
         <div class="card-body">
-          <p> <strong>Personal information</strong> </p>
-          <p class="card-text">First Name:  <%= @user.first_name %></p>
-          <p class="card-text">Last Name: <%= @user.last_name %></p>
-          <p class="card-text">Email: <%= @user.email %></p>
-          <p class="card-text">Country: <%= @user.location %></p>
+          <p style="font-size:20px;" class="card-text">Name:  <%= @user.first_name %></p>
+          <p style="font-size:20px;" class="card-text">Last Name: <%= @user.last_name %></p>
+          <p style="font-size:20px;" class="card-text">Email: <%= @user.email %></p>
+          <p style="font-size:20px;" class="card-text">Country: <%= @user.location %></p>
           <%# button edit %>
           <div class="edit-btn">
             <%= link_to edit_user_registration_path do%>

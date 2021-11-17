@@ -10,15 +10,17 @@ puts "Clearing database"
 Booking.delete_all
 User.delete_all
 Yacht.delete_all
-arr = ["Ibiza", "Monaco"]
+arr = ["Ibiza", "Monaco", "Gibraltar", "Malaga", "Valencia", "Barcelona","Montpellier", "Marseille", "Nice", "Genoa"]
 count = 0
 24.times do
+  location = arr.sample
   Yacht.create!(
     {
       name: Faker::Movies::HarryPotter.character,
       description: Faker::Books::Dune.quote,
       capacity: rand(20..2000),
-      location: arr.sample,
+      location: location,
+      address: location,
       image_url: noko_arr[count].attribute('style').value.match(/'(.+)'/)[1],
       price: rand(5000..1000000)
     }

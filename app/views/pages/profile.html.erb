@@ -14,35 +14,88 @@
     rentals/bookings and their information
 
 
-    %>
-
-    <div class="profile_page container">
-
-
-    </div>
-
-
 <%# <%= video_tag "background_video_3.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, class: "myVideo" %>
 
-<div class="profile-container container-fluid">
-<h3 class="page-title">Welcome to your profile</h3>
+<%# main container %>
+<div class="profile-container " id="profile">
+  <h2 class="page-head">Welcome <strong><%= @user.first_name.capitalize %></strong> to your profile</h2>
+  <%# card container %>
 
-<div class="row justify-content-evenly">
-    <% @users.each do |user| %>
+  <div class="page">
     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-      <div class="card">
-          <div class="card-body">
-            <p class="card-text"><%= user.last_name %></p>
-            <p class="card-text"><%= user.email %></p>
-            <p class="card-text"><%= user.phone_number %></p>
-            <p class="card-text"><%= user.location %></p>
-            </div>
+      <div class="card" id="user-details">
+        <div class="card-body">
+          <p class="card-text">First Name:  <%= @user.first_name %></p>
+          <p class="card-text">Last Name: <%= @user.last_name %></p>
+          <p class="card-text">Email: <%= @user.email %></p>
+          <p class="card-text">Country: <%= @user.location %></p>
+          <%# button edit %>
+          <div class="edit-btn">
+            <%= link_to edit_user_registration_path do%>
+            <button class="btn btn-flat btn-primary">edit</button>
+            <% end %>
           </div>
+        </div>
       </div>
+    </div>
+
+    <div class="card" id="user-history" style="overflow-y: scroll;">
+      <p> <strong>Your rental history: </strong></p>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Reciept number</th>
+            <th scope="col">Date</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>This will be a link######################</td>
+            <td>dd/mm/yyyy</td>
+            <td>price</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>This will be a link######################</td>
+            <td>dd/mm/yyyy</td>
+            <td>price</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>This will be a link######################</td>
+            <td>dd/mm/yyyy</td>
+            <td>price</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <div class="show-more">
+        <%= link_to edit_user_registration_path do%>
+        <a href="#">Show all</a>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+
   </div>
 </div>
+
+<%# ---------------------apply the screen resolution thing to show and profile pages-------------------- %>
+
+<%# animated text %>
+<%#
+<div>Escape</div>
+<div>
+  <span>into amazing experiences</span>
+</div>
+
+
+<p>a css3 animation demo</p> %>
+
+
 
 
 <%= render "footer" %>

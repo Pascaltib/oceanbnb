@@ -1,0 +1,130 @@
+// containers
+// MAIN CONTAINER
+
+#profile {
+
+}
+// container of info and history
+.page {
+  background-color: white;
+  display: flex;
+  inline-size: auto;
+  justify-content: space-around;
+}
+
+// CARD CONTAINER
+#user-details {
+  padding: 20px;
+  display: inline-block;
+  height: auto;
+  font-size: 16px;
+
+}
+// HISTORY CONTAINER
+#user-history {
+  background-color: white;
+  position: relative;
+  padding: 40px;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 20px;
+}
+#user-history p {
+  font-size: 16px;
+}
+// header
+.page-head {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-left: 50px;
+}
+
+.edit-btn {
+  margin-top: 24px;
+}
+.card-body {
+  margin: 8px;
+}
+#profile {
+  margin: 40px;
+}
+.show-more {
+  text-align: right;
+  margin-top: 8px;
+}
+table {
+  width: 100%;
+  align-content: space-between;
+  text-align: justify;
+  border-spacing: 8px;
+}
+// rows
+.id-row {
+  width: fit-content;
+  text-align: left;
+}
+.date-row {
+  width: 100px;
+  text-align: center;
+}
+.amount-row {
+  width: 100px;
+  text-align: right;
+}
+
+
+
+
+// //animated text
+
+// div {
+//   display:inline-block;
+//   overflow:hidden;
+//   white-space:nowrap;
+// }
+
+// div:first-of-type {    /* For increasing performance
+//                        ID/Class should've been used.
+//                        For a small demo
+//                        it's okaish for now */
+//   animation: showup 7s infinite;
+// }
+
+// div:last-of-type {
+//   width:0px;
+//   animation: reveal 7s infinite;
+// }
+
+// div:last-of-type span {
+//   margin-left:-355px;
+//   animation: slidein 7s infinite;
+// }
+
+// @keyframes showup {
+//     0% {opacity:0;}
+//     20% {opacity:1;}
+//     80% {opacity:1;}
+//     100% {opacity:0;}
+// }
+
+// @keyframes slidein {
+//     0% { margin-left:-800px; }
+//     20% { margin-left:-800px; }
+//     35% { margin-left:0px; }
+//     100% { margin-left:0px; }
+// }
+
+// @keyframes reveal {
+//     0% {opacity:0;width:0px;}
+//     20% {opacity:1;width:0px;}
+//     30% {width:355px;}
+//     80% {opacity:1;}
+//     100% {opacity:0;width:355px;}
+// }
+
+
+// p {
+//   font-size:12px;
+//   color:#999;
+//   margin-top:200px;
+// }

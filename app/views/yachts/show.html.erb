@@ -28,14 +28,12 @@
   <div class="card-reserve">
       <%# RESERVATION-BOX container %>
     <div class="bg-white rounded shadow" id="reservation-box">
-
-    <%= simple_form_for [@yacht, @booking] do |f| %>
-    <span class="mb-0" style="font-weight:bold;">€<%= number_with_delimiter(@yacht.price, :delimiter => ',') %> per day</span>
-    <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.submit "Make Reservation", class: "btn btn-primary" %>
-<% end %>
-
+      <%= simple_form_for [@yacht, @booking] do |f| %>
+        <span class="mb-0" style="font-weight:bold;">€<%= number_with_delimiter(@yacht.price, :delimiter => ',') %> per day</span>
+        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.submit "Make Reservation", class: "btn btn-primary" %>
+      <% end %>
     </div>
 
     <%# amenities and back button %>
@@ -49,8 +47,10 @@
     </div>
   </div>
 
-  <div class="bg-white rounded shadow" id="map-container">
-    <h2>this is for the map</h2>
+  <div id="map" class = ""
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
 </div>

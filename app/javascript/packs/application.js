@@ -33,10 +33,12 @@ import { loadDynamicBannerText } from '../components/typed';
 // import { tabsRun } from '../components/tabs';
 
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   // loadDynamicBannerText();
   initFlatpickr();
+  initMapbox();
 });

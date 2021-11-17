@@ -52,7 +52,7 @@ body{
 }
 
 // Yacht Card Style
-.card{
+.yacht-card{
   margin-bottom: 30px;
   border-radius: 8px;
   border: none;
@@ -63,7 +63,7 @@ body{
   transition: 0.5s;
 }
 
-.card:hover{
+.yacht-card:hover{
   box-shadow: 0px 0px 50px rgb(216, 205, 255);
   transition: 0.5s;
 

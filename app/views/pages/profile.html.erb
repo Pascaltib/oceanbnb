@@ -56,7 +56,7 @@
             <% @user_bookings.each do |booking|%>
             <tr>
             <td scope="col"> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].name %> </td>
-            <td scope="col"><%= booking.starts_at %> </td>
+            <td scope="col"><%= booking.start_date %> </td>
             <td scope="col"> € <%= number_with_delimiter(@yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price, :delimiter => ',')  %> </td>
             <td scope="col"><%= booking.status %> </td>
             </tr>

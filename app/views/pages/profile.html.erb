@@ -18,13 +18,14 @@
 
 <%# main container %>
 <div class="profile-container " id="profile">
-  <h2 class="page-head">Welcome <strong><%= @user.first_name.capitalize %></strong> to your profile</h2>
+  <h2 class="page-head">Welcome <strong><%= @user.first_name.capitalize %></strong> </h2>
   <%# card container %>
 
   <div class="page">
     <div class="col-12 col-md-6 col-lg-4 col-xl-3">
       <div class="card" id="user-details">
         <div class="card-body">
+          <p> <strong>Personal information</strong> </p>
           <p class="card-text">First Name:  <%= @user.first_name %></p>
           <p class="card-text">Last Name: <%= @user.last_name %></p>
           <p class="card-text">Email: <%= @user.email %></p>
@@ -32,7 +33,7 @@
           <%# button edit %>
           <div class="edit-btn">
             <%= link_to edit_user_registration_path do%>
-            <button class="btn btn-flat btn-primary">edit</button>
+            <button class="btn btn-light index-card-button">edit</button>
             <% end %>
           </div>
         </div>
@@ -40,55 +41,41 @@
     </div>
 
 
-    <div>
-     <ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled">Disabled</a>
-  </li>
-</ul>
+    <%# upcoming reservation card %>
+    <div class="card" id="user-reservation" style="overflow-y: scroll;">
+      <p> <strong>My Reservations </strong></p>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"> Yacht </th>
+            <th scope="col"> Date</th>
+            <th scope="col"> Price </th>
+            <th scope="col"> Status </th>
+          </tr>
+        </thead>
+        <tbody>
+            <% @user_bookings.each do |booking|%>
+            <tr>
+            <td scope="col"> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].name %> </td>
+            <td scope="col"><%= booking.starts_at %> </td>
+            <td scope="col"> € <%= number_with_delimiter(@yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price, :delimiter => ',')  %> </td>
+            <td scope="col"><%= booking.status %> </td>
+            </tr>
+            <%end%>
+
+        </tbody>
+      </table>
     </div>
+
   </div>
 </div>
 
 
 <%# comment %>
 
-    <div class="tab">
-      <%# upcoming reservation card %>
-      <div class="card" id="user-reservation" style="overflow-y: scroll;">
-        <p> <strong>My Reservations </strong></p>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col"> Yacht </th>
-              <th scope="col"> mm/dd/yyyy </th>
-              <th scope="col"> Price </th>
-            </tr>
-          </thead>
-          <tbody>
-             <% @user_bookings.each do |booking|%>
-             <tr>
-              <td scope="col"> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].name %> </td>
-              <td scope="col"><%= booking.starts_at %> </td>
-              <td scope="col"> € <%= number_with_delimiter(@yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price, :delimiter => ',')  %> </td>
-              </tr>
-              <%end%>
-
-          </tbody>
-        </table>
-      </div>
 
       <%# history card %>
-      <div class="card" id="user-history" style="overflow-y: scroll;">
+      <%# <div class="card" id="user-history" style="overflow-y: scroll;">
         <p> <strong>Your rental history: </strong></p>
         <table class="table table-hover">
           <thead>
@@ -108,17 +95,17 @@
             </tr>
 
           </tbody>
-        </table>
+        </table> %>
 
-
+<%#
         <div class="show-more">
           <%= link_to edit_user_registration_path do%>
-          <a href="#">Show all</a>
-          <% end %>
-        </div>
-      </div>
+          <%# <a href="#">Show all</a> %>
+          <%# <% end %>
+        <%# </div> %>
+      <%# </div> %>
 
-    </div>
+    <%# </div> %>
 
 <%# ---------------------apply the screen resolution thing to show and profile pages-------------------- %>
 

@@ -4,9 +4,27 @@
   margin: 9vh 5% 5vh 5%;
 }
 
+.banner h1{
+  font-size: 80px;
+  font-family: 'Shippori Antique B1';
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.home-container{
+  margin: 0;
+}
+
+.subtitle{
+  color: rgb(209, 209, 209);
+  font-family: Shippori Antique B1;
+  font-weight: 200;
+  font-size: 12px;
+}
+
 .home-card{
   margin: 5vh 0 0 0;
-  padding: 7%;
+  padding: 4%;
   width: 49%;
   height: 90vh;
   background-size: cover;
@@ -17,16 +35,19 @@
 
 .home-card-header{
   line-height: 50px;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: normal;
+  width: 70%;
+  font-family: Shippori Antique B1;
 }
+
 .home-card-button{
   margin-top: 15px;
-  padding: 14px 24px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  padding: 8px 24px;
+  background-color: rgb(232, 232, 232);
+  border-radius: 24px;
 }
+
 
 @media(max-width: 900px) {
   .home-card{

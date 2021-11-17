@@ -1,16 +1,17 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://yachtcharters.rentals/wp-content/uploads/2018/05/home-banner.jpg);">
-  <div class="container row flex-column ml-5">
-    <div class="row align-items-center" style="color:white;">
-      <h1 class="mb-2 ml-3" id="banner-typed-text"></h1>
+  <div class="home-container row flex-column align-items-center">
+    <div class="align-items-center" style="color:white;">
+    <h1 class="home-title">WELCOME TO OCEANBNB</h1>
+
     </div>
-    <p class="m-0 p-0">Live a life of luxury and pleasure.</p>
+    <p class="subtitle">Enjoy a life of luxury and pleasure.</p>
     <%= link_to yachts_path, class:"m-0 p-0" do%>
-    <button class="btn btn-flat btn-success">Rent now</button>
+    <button class="btn btn-light home-card-button">Begin your journey</button>
     <% end %>
   </div>
 </div>
 <div class="home-card-container">
-  <h1 style="font-family: Inter">Discover Oceanbnb Experience</h1>
+  <h1 style="font-family: Shippori Antique B1">Discover our experiences</h1>
 
   <div class="row justify-content-between">
     <div class="home-card" style="background-image: url(https://res.cloudinary.com/dnxriaa8a/image/upload/v1637081233/home_card_kc7rhy.jpg);">
@@ -26,9 +27,7 @@
         <div class="btn btn-light home-card-button">Online Experiences</div>
       <% end %>
     </div>
-
   </div>
-
 </div>
 
 <%= render "footer" %>

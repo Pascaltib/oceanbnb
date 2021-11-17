@@ -29,6 +29,9 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { loadDynamicBannerText } from '../components/typed';
+
+// import { tabsRun } from '../components/tabs';
+
 import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {

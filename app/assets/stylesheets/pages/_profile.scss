@@ -6,11 +6,16 @@
   inline-size: auto;
   justify-content: space-around;
 }
+.profile {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 // CARD CONTAINER
 #user-details {
   padding: 20px;
-  display: inline-block;
-  height: auto;
+  display: flex;
   font-size: 16px;
 
 }
@@ -19,7 +24,7 @@
   background-color: white;
   position: relative;
   padding: 40px;
-  display: inline-block;
+  display: flex;
   font-size: 16px;
   margin-left: 20px;
 }
@@ -30,16 +35,15 @@
 #user-reservation {
   background-color: white;
   position: relative;
-  padding: 40px;
+  padding: 40px 60px;
   display: inline-block;
   font-size: 16px;
-  margin-left: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-inline-end: auto;
+  width: -webkit-fill-available;
+}
 
-}
-// TABLES CONTAINER
-.tab {
-  background-color: blue;
-}
 // header
 .page-head {
   margin-top: 40px;
@@ -50,8 +54,10 @@
 .edit-btn {
   margin-top: 24px;
 }
-.card-body {
-  margin: 8px;
+
+.card-body p {
+
+  font-size: 16px;
 }
 #profile {
   margin: 40px;
@@ -83,40 +89,40 @@ table {
 
 // tab
 /* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
+// .tab {
+//   overflow: hidden;
+//   border: 1px solid #ccc;
+//   background-color: #f1f1f1;
+// }
 
 /* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
+// .tab button {
+//   background-color: inherit;
+//   float: left;
+//   border: none;
+//   outline: none;
+//   cursor: pointer;
+//   padding: 14px 16px;
+//   transition: 0.3s;
+// }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
+// .tab button:hover {
+//   background-color: #ddd;
+// }
 
 /* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
+// .tab button.active {
+//   background-color: #ccc;
+// }
 
 /* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
+// .tabcontent {
+//   display: none;
+//   padding: 6px 12px;
+//   border: 1px solid #ccc;
+//   border-top: none;
+// }
 
 
 

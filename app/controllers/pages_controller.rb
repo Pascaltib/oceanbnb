@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @users = User.all
     @user = current_user
 # added to access the yatch to profile
-    @yachts = Yacht.all
+    @user_bookings = Booking.all.select { |booking| booking.user_id == @user.id}
     # @user.yachts = date_reserved??
   end
 end

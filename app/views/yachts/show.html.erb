@@ -29,7 +29,6 @@
       <%# RESERVATION-BOX container %>
     <div class="bg-white rounded shadow" id="reservation-box">
 
-
     <%= simple_form_for [@yacht, @booking] do |f| %>
     <span class="mb-0" style="font-weight:bold;">€<%= number_with_delimiter(@yacht.price, :delimiter => ',') %> per day</span>
     <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>

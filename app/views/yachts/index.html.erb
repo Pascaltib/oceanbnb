@@ -1,6 +1,27 @@
 <div class="yacht-container container-fluid">
 <h3 class="page-title">Discover all of our Yachts</h3>
 
+<%# for the search %>
+<div class="container">
+  <%= form_tag yachts_path, method: :get do %>
+   <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search" %>
+   <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <div id="yacht-search">
+        <% @yachts.each do |yacht| %>
+          <h4><%= yacht.name %></h4>
+          <p><%= yacht.description %></p>
+          <p><%= yacht.location %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%# //////////// %>
 <div class="row justify-content-evenly">
     <% @yachts.each do |yacht| %>
       <%= link_to yacht_path(yacht) do %>

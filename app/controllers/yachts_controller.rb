@@ -16,6 +16,12 @@ class YachtsController < ApplicationController
   end
 
   def index
-    @yachts = Yacht.all
+    if params[:query].present?
+      ##pg search
+      @yachts = Yacht.search_name_description_location(params[:query])
+      @yachts = Yacht.global_search(params[:query])
+    else
+      @yachts = Yacht.all
+    end
   end
 end

@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://yachtcharters.rentals/wp-content/uploads/2018/05/home-banner.jpg);">
+<div class="home-video-wrapper banner">
+  <%= video_tag "banner_video.mp4", :size => "320x240", autoplay: :autoplay, loop: :loop, muted: :muted, class: "home-video" %>
   <div class="home-container row flex-column align-items-center">
     <div class="align-items-center" style="color:white;">
     <h1 class="home-title">WELCOME TO OCEANBNB</h1>
@@ -12,6 +12,7 @@
     <% end %>
   </div>
 </div>
+
 <div class="home-card-container">
   <h1 style="font-family: Shippori Antique B1">Discover our experiences</h1>
 

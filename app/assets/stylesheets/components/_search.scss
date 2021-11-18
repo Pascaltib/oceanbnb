@@ -1,8 +1,12 @@
+.yacht-search-form{
+  display: flex;
+  width: 35%;
+}
+
 // search input
 .search-form-field {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  width: 64vh;
 }
 // search button
 .submit-search {
@@ -10,11 +14,6 @@
   border-bottom-right-radius: 8px;
   color: aquamarine;
 }
-// container of search
-.bar {
-  display: flex;
-}
-
 
 .tabs-underlined {
   display: flex;
@@ -34,4 +33,11 @@
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
   border-bottom: 3px solid #555555;
+}
+
+
+@media(max-width: 600px) {
+  .yacht-search-form{
+    display: none;
+  }
 }

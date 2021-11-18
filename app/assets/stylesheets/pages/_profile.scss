@@ -1,32 +1,34 @@
-// containers
-// container of info and history
-.page-oranger{
-  // background-color: orange;
-  height: 70vh;
+.welcome-name {
+  // background-color: whitesmoke;
+  height: 12vh;
+  text-align: center;
+  margin-top: 4%;
+}
+
+.profile-index-container{
+  height: 40vh;
+  display: flex;
+  border-radius: 8px;
+}
+
+.name-avatar-container {
+  // background-color: black;
+  width: 124vh;
   display: flex;
 }
-#page-bluer {
-  height: 83vh;
-  padding-left: 40px;
-  padding-right: 40px;
-  // background-color: blue;
+
+.profile-info-card{
+  padding: 2vh;
 }
-// CARD CONTAINER
+
+
 #page-greener {
-  // background-color: green;
   width: 60vh;
   padding: 20px;
-  margin: 20px;
-  border-radius: 8px;
-  margin-left: 4vh;
 }
-// #page-greener:hover {
-//   transform: scale(1.1);
-// }
 
-// RESERVATION CONTAINER
+
 #page-reder {
-  // background-color: red;
   width: 120vh;
   margin-top: 16px;
   margin-left: 4vh;
@@ -34,13 +36,15 @@
   border-radius: 8px;
   height: 31vh;
 }
+
 #page-reder:hover {
   opacity: 1;
 }
+
 #table-yellower {
-  // background-color: greenyellow;
   display: contents;
 }
+
 #table-pinker {
   // background-color: hotpink;
   display: table-row;
@@ -51,26 +55,17 @@
   width: 58vh;
   margin: 20px;
 }
-.black {
-  // background-color: black;
-  width: 124vh;
-  display: flex;
-}
-.left {
-  // background-color: indigo;
-  height: 67vh;
-  width: 124vh;
-}
+// .left {
+//   // background-color: indigo;
+//   height: 67vh;
+//   width: 124vh;
+// }
 .right {
   background-color: violet;
   height: 60vh;
   width: 80vh;
   padding: 8px;
   margin: 2vh;
-}
-.welcome-name {
-  // background-color: whitesmoke;
-  height: 12vh;
 }
 .l-blue {
   height: 6vh;
@@ -87,35 +82,3 @@ svg {
   max-width:370px;
   height:auto;
 }
-
-
-
-
-
-
-// css for the glowing name
-// .welcome-name {
-//   background: 50% 100% / 50% 50% no-repeat
-//               radial-gradient(ellipse at bottom, rgb(129, 128, 128), transparent, transparent);
-//   -webkit-background-clip: text;
-//   background-clip: text;
-//   color: transparent;
-//   font-size: 10vw;
-//   font-family: "Source Sans Pro", sans-serif;
-//   animation: reveal 3000ms ease-in-out forwards 200ms,
-//              glow 2500ms linear infinite 2000ms;
-
-//   @keyframes reveal {
-//     80%{
-//       letter-spacing: 8px;
-//     }
-//     100% {
-//       background-size: 300% 300%;
-//     }
-//   }
-//   @keyframes glow {
-//     40% {
-//       text-shadow: 0 0 8px #fff;
-//     }
-//   }
-// }

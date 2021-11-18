@@ -1,15 +1,15 @@
-<%= render 'shared/navbar' %>
-<%# main container %>
-<div class="profile-container " id="page-bluer">
+<%= render "shared/navbar" %>
+<% # main container %>
+<div class="profile-container" id="page-bluer">
   <div class="welcome-name">
-    <%# viewbox="0 0 100 20 %>
+    <% # viewbox="0 0 100 20 %>
     <svg viewbox="0 0 100 30">
       <defs>
         <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="0.5">
-          <stop offset="5%" stop-color="#326384"/>
-          <stop offset="95%" stop-color="#123752"/>
+          <stop offset="50%" stop-color="#326384"/>
+          <stop offset="50%" stop-color="#123752"/>
         </linearGradient>
-        <pattern id="wave" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
           <path id="wavePath" d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z" mask="url(#mask)" fill="url(#gradient)">
             <animateTransform
                 attributeName="transform"
@@ -22,36 +22,32 @@
           </path>
         </pattern>
       </defs>
-      <text text-anchor="middle" x="50" y="15" font-size="12" fill="url(#wave)"  fill-opacity="0.6">Welcome <%= @user.first_name.capitalize %></text>
-      <text text-anchor="middle" x="50" y="15" font-size="12" fill="url(#gradient)" fill-opacity="0.1">Welcome <%= @user.first_name.capitalize %></text>
+      <text text-anchor="middle" x="50" y="15" font-size="12" fill="url(#wave)"  fill-opacity="0.5">Welcome <%= @user.first_name.capitalize %>!</text>
+      <text text-anchor="middle" x="50" y="15" font-size="12" fill="url(#gradient)" fill-opacity="0.2">Welcome <%= @user.first_name.capitalize %>!</text>
     </svg>
   </div>
 
-  <%# card container %>
+  <% # Card container %>
 
-  <div class="page-oranger">
-    <div class="left">
-      <div class="black">
-        <div id="page-greener">
-          <p style="font-size:20px;" class="card-text">Name:  <%= @user.first_name.capitalize %></p>
-          <p style="font-size:20px;" class="card-text">Last Name: <%= @user.last_name.capitalize %></p>
-          <p style="font-size:20px;" class="card-text">Email: <%= @user.email %></p>
-          <p style="font-size:20px;" class="card-text">Location: <%= @user.location.capitalize %></p>
-          <%# button edit %>
-          <div class="edit-btn">
-            <%= link_to edit_user_registration_path do%>
-            <button class="btn btn-light index-card-button">edit</button>
+  <div class="profile-index-container">
+      <div class="name-avatar-container">
+        <div class="profile-info-card bg-white rounded shadow">
+          <div id="page-greener rounded shadow">
+            <p style="font-size:20px;" class="card-text">Name:  <%= @user.first_name.capitalize %></p>
+            <p style="font-size:20px;" class="card-text">Last Name: <%= @user.last_name.capitalize %></p>
+            <p style="font-size:20px;" class="card-text">Email: <%= @user.email %></p>
+            <p style="font-size:20px;" class="card-text">Location: <%= @user.location.capitalize %></p>
+            <div class="edit-btn">
+            <%= link_to edit_user_registration_path do %>
+            <button class="btn btn-light index-card-button">Edit</button>
             <% end %>
+            </div>
           </div>
-        </div>
-        <div class="image-browner">
-        <div class="l-blue">
-        <h1>this section is for avatar</h1>
-          <p>Your Boat</p>
-        </div>
-        </div>
       </div>
-      <%# upcoming reservation card %>
+    </div>
+  </div>
+
+      <% # upcoming reservation card %>
       <div id="page-reder">
         <p> <strong>My Reservations </strong></p>
         <table class="table table-hover" >
@@ -65,22 +61,19 @@
               </tr>
             </thead>
             <tbody>
-              <% @user_bookings.each do |booking|%>
+              <% @user_bookings.each do |booking| %>
               <tr class="row"id="table-pinker">
-                <td scope="col"> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].name %> </td>
+                <td scope="col"> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id }[0].name %> </td>
                 <td scope="col"><%= booking.start_date %> </td>
-                <% total_price = ((booking.end_date - booking.start_date).to_i) * @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price %>
-                <td scope="col"> € <%= number_with_delimiter(total_price, :delimiter => ',')  %> </td>
+                <% total_price = ((booking.end_date - booking.start_date).to_i) * @yachts.select { |yacht| yacht.id == booking.yacht_id }[0].price %>
+                <td scope="col"> € <%= number_with_delimiter(total_price, :delimiter => ",") %> </td>
                 <td scope="col"><%= booking.status %> </td>
                 </tr>
-                <%end%>
+                <% end %>
             </tbody>
           </div>
         </table>
       </div>
-    </div>
-    <div class="right">
-    <h2>this section is for the latest reservation yacht image</h2>
     </div>
   </div>
 </div>

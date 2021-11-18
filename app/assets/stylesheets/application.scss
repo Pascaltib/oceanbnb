@@ -14,3 +14,8 @@
 @import "components/index";
 @import "pages/index";
 @import "yachts/index";
+
+body{
+  position: relative;
+  min-height: 110vh;
+}

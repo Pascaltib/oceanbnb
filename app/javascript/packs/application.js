@@ -34,7 +34,7 @@ import { loadDynamicBannerText } from '../components/typed';
 
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
-import { placeMapbox } from '../plugins/init_mapbox';
+import { initMapbox2 } from '../plugins/init_mapbox2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -42,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   // loadDynamicBannerText();
   initFlatpickr();
   initMapbox();
+  initMapbox2();
 });

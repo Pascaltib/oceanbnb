@@ -17,5 +17,12 @@ class YachtsController < ApplicationController
 
   def index
     @yachts = Yacht.all
+    @markers = @yachts.geocoded.map do |yacht|
+      {
+        lat: yacht.latitude,
+        lng: yacht.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht })
+      }
+    end
   end
 end

@@ -6,6 +6,8 @@ class YachtsController < ApplicationController
     @booking = Booking.new
     @user = current_user
     @yachts = Yacht.all
+    @ammenities = Ammenity.all.where(yacht: @yacht)[0]
+
     @markers = @yachts.geocoded.map do |yacht|
       {
         lat: yacht.latitude,

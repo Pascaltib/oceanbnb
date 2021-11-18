@@ -4,20 +4,29 @@
   <% end %>
 
   <%# -----search box ------ %>
-      <div class="">
+  <div class="bar">
+    <!-- Example single danger button -->
+    <div class="nav-box">
       <%= form_tag yachts_path, method: :get, class: 'row' do %>
       <%= text_field_tag :query, params[:query], class: "form-control col-8", placeholder: "Search" %>
-      <%= submit_tag "Search", class: "btn btn-primary col-4 submit-search" %>
+      <%= submit_tag "Search", class: "btn btn-primary col-4 submit-search"  %>
       <% end %>
     </div>
+  </div>
+  <%# -----/search box ------ %>
 
+<%# <ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">All</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Prices</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Capacity</a>
+  </li>
+</ul> %>
 
-  <%# -----search box ------ %>
-
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">

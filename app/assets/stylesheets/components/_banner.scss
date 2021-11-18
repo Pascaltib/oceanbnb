@@ -1,7 +1,21 @@
-.banner {
-  background-size: cover;
-  background-position: center;
+.home-video{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  z-index: -2;
+}
+.home-video-wrapper{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 150px 0;
+}
+
+.banner {
+
 }
 
 .banner h1 {

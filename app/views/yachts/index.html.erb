@@ -1,5 +1,6 @@
 <%= render 'shared/search-navbar' %>
 <div class="yacht-container container-fluid">
+<<<<<<< HEAD
 <h3 class="page-title">Discover all of our Yachts</h3>
 
 
@@ -22,13 +23,52 @@
               <p class="btn btn-light index-card-button">View</p>
                             <% end %>
 
+=======
+  <h3 class="page-title">Discover all of our Yachts</h3>
+  <div class="full-page-container row justify-content-evenly">
+    <div class="yacht-list-container col-sm-12 col-lg-4">
+      <div class="row justify-content-evenly">
+        <% @yachts.each do |yacht| %>
+        <%= link_to yacht_path(yacht) do %>
+        <div class="col-12 col-md-6 col-lg-12">
+          <div class="yacht-card">
+            <img src="<%= yacht.image_url %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to yacht.name, yacht_path(yacht) %></h5>
+              <p class="card-text-yacht"><strong style="color: #333333">Description:</strong> <%= yacht.description %></p>
+              <div class="card-bottom d-flex justify-content-between">
+                <div class="card-bottom-info">
+                  <p class="card-text-yacht">
+                  <strong style="color: #333333">Price per day: €</strong><%= number_with_delimiter(yacht.price, :delimiter => ",") %>
+                  </p>
+                  <p class="card-text-yacht">
+                  <strong style="color: #333333">Capacity: </strong><%= yacht.capacity %>
+                  </p>
+                </div>
+                <div class="card-bottom-button">
+                  <%= link_to yacht_path(yacht) do %>
+                  <p class="btn btn-light index-card-button">View</p>
+                  <% end %>
+                </div>
+>>>>>>> master
               </div>
             </div>
           </div>
+        </div>
+        <% end %>
+        <% end %>
+        </div>
       </div>
+    <div class="index-map-container col-0 col-8">
+      <div class="second-show-card bg-white rounded shadow" id="map-container">
+        <div id="map" style="width: 100%; height: 900px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
+        </div>
       </div>
-              <% end %>
-    <% end %>
+    </div>
+    </div>
+
   </div>
 </div>
 

@@ -1,0 +1,44 @@
+<div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to  root_path, class: "navbar-brand" do %>
+    <img style="width: 140px;" src="https://res.cloudinary.com/dnxriaa8a/image/upload/v1637081784/logo_oceanbnb_ufxktn.png" alt="logo">
+  <% end %>
+
+  <%# -----search box ------ %>
+      <div class="">
+      <%= form_tag yachts_path, method: :get, class: 'row' do %>
+      <%= text_field_tag :query, params[:query], class: "form-control col-8", placeholder: "Search" %>
+      <%= submit_tag "Search", class: "btn btn-primary col-4 submit-search" %>
+      <% end %>
+    </div>
+
+
+  <%# -----search box ------ %>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1tBTK3u7sDWpZWSd_eDJM4gealRBfdrzAXtPhtbk-MzAI0hXCihcHeQECWLhQtCtKSAw&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "My Profile", "profile", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

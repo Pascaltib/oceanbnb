@@ -1,11 +1,32 @@
-.container-search {
-  background-color: lightcoral;
-  height: 10vh;
-  width: 80vh;
-  display: inline-flex;
-}
 
 .form-control {
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  width: 64vh;
+}
+
+.submit-search {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: aquamarine;
+}
+
+.nav-box {
+  width: 100vh;
+  background-color: blue;
+}
+.bar {
+  background-color: blueviolet;
   display: flex;
+}
+.dropdown-toggle {
+  background-color: red;
+  margin-right: 8px;
+  background-color: white;
+  color: gray;
+}
+.dropdown-toggle:hover {
+  margin-right: 8px;
+  background-color: white;
+  color: gray;
 }

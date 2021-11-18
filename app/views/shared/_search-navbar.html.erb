@@ -4,15 +4,41 @@
   <% end %>
 
   <%# -----search box ------ %>
-      <div class="">
+  <div class="bar">
+
+    <!-- Example single danger button -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+
+      </button>
+      <div class="dropdown-menu">
+          <form>
+            <div class="form-group">
+              <label for="formControlRange">Price</label>
+              <input type="range" class="form-control-range" id="formControlRange">
+            </div>
+          </form>
+          <form>
+            <div class="form-group">
+              <label for="formControlRange">Capacity</label>
+              <input type="range" class="form-control-range" id="formControlRange">
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+    <div class="nav-box">
       <%= form_tag yachts_path, method: :get, class: 'row' do %>
       <%= text_field_tag :query, params[:query], class: "form-control col-8", placeholder: "Search" %>
-      <%= submit_tag "Search", class: "btn btn-primary col-4 submit-search" %>
+      <%= submit_tag "Search", class: "btn btn-primary col-4 submit-search"  %>
       <% end %>
     </div>
+  </div>
 
 
-  <%# -----search box ------ %>
+
+  <%# -----/search box ------ %>
 
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

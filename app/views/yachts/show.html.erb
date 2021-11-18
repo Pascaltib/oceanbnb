@@ -7,7 +7,7 @@
       <div class="show-card-body">
         <ul class="list-group">
           <div class="list-group-item"><h5 class="name"><%= @yacht.name %></h5></div>
-          <div class="list-group-item card-text"><strong style="color: #333333">Price per day: €</strong><%= number_with_delimiter(@yacht.price, :delimiter => ',') %></div>
+          <div class="list-group-item card-text"><strong style="color: #333333">Price per day: €</strong><%= number_with_delimiter(@yacht.price, :delimiter => ",") %></div>
           <div class="list-group-item card-text"><strong style="color: #333333">Capacity: </strong><%= @yacht.capacity %></div>
           <div class="list-group-item"><strong style="color: #333333">Description: </strong><%= @yacht.description %></div>
         </ul>
@@ -44,8 +44,9 @@
     <div class="first-show-card bg-white rounded shadow col-4" id="map-container">
       <div id="map" class = ""
         style="width: 100%; height: 600px;"
+        data-location="<%= @location_marker.to_json %>"
         data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
       </div>
     </div>
   </div>

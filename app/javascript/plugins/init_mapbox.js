@@ -14,23 +14,25 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/navigation-day-v1'
+      style: 'mapbox://styles/mapbox/outdoors-v11'
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-
       new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(map);
     });
 
+    if (mapElement.dataset.location) {
+      const marker = JSON.parse(mapElement.dataset.location);
+      fitMapToMarkers(map, marker);
+    } else {
+      fitMapToMarkers(map, markers);
+    };
 
-
-
-    fitMapToMarkers(map, markers);
   }
 };
 

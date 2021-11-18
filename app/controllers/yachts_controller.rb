@@ -10,9 +10,11 @@ class YachtsController < ApplicationController
       {
         lat: yacht.latitude,
         lng: yacht.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht })
+        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
       }
     end
+    @location_marker = [{ lat: @yacht.latitude,
+                          lng: @yacht.longitude }]
   end
 
   def index
@@ -21,7 +23,7 @@ class YachtsController < ApplicationController
       {
         lat: yacht.latitude,
         lng: yacht.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht })
+        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
       }
     end
   end

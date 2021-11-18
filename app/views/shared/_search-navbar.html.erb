@@ -8,7 +8,7 @@
     <!-- Example single danger button -->
     <div class="nav-box">
       <%= form_tag yachts_path, method: :get, class: 'row' do %>
-      <%= text_field_tag :query, params[:query], class: "form-control col-8", placeholder: "Search" %>
+      <%= text_field_tag :query, params[:query], autocomplete: "off", class: "form-control col-8", placeholder: "Monaco" %>
       <%= submit_tag "Search", class: "btn btn-primary col-4 submit-search"  %>
       <% end %>
     </div>

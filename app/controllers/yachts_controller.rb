@@ -18,8 +18,12 @@ class YachtsController < ApplicationController
   def index
     if params[:query].present?
       ##pg search
-      @yachts = Yacht.search_name_description_location(params[:query])
-      @yachts = Yacht.global_search(params[:query])
+      sql_query = "yachts.name ILIKE :query \
+        OR yachts.description ILIKE :query \
+        OR yachts.location ILIKE :query \
+      "
+      @yachts = Yacht.where(sql_query, query: "%#{params[:query]}%")
+      # @yachts = Yacht.global_search(params[:query])
     else
       @yachts = Yacht.all
     end

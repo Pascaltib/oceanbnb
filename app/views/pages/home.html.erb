@@ -16,14 +16,14 @@
   <div class="row justify-content-between">
     <div class="home-card" style="background-image: url(https://res.cloudinary.com/dnxriaa8a/image/upload/v1637081233/home_card_kc7rhy.jpg);">
       <div class="home-card-header">Things to do on your trip</div>
-      <%= link_to yachts_path, class:"m-0 p-0" do%>
+      <%= link_to yacht_path(@yacht1), class:"m-0 p-0" do%>
         <div class="btn btn-light home-card-button">Experiences</div>
       <% end %>
     </div>
 
     <div class="home-card" style="background-image: url(https://res.cloudinary.com/dnxriaa8a/image/upload/v1637081233/home_card2_slmobq.jpg);">
       <div class="home-card-header">Things to do from home</div>
-      <%= link_to yachts_path, class:"m-0 p-0" do%>
+      <%= link_to yacht_path(@yacht2), class:"m-0 p-0" do%>
         <div class="btn btn-light home-card-button">Online Experiences</div>
       <% end %>
     </div>

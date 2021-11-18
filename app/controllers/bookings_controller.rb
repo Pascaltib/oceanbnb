@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
       booking = Booking.new(booking_params)
       booking.user = @user
       booking.yacht = @yacht
+      booking.save
 
       redirect_to profile_path
     else

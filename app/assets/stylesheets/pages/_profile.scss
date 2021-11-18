@@ -1,21 +1,22 @@
 // containers
 // container of info and history
 .page-oranger{
-  background-color: orange;
-  height: 65vh;
+  // background-color: orange;
+  height: 70vh;
+  display: flex;
 }
 #page-bluer {
   height: 83vh;
   padding-left: 40px;
   padding-right: 40px;
-  background-color: blue;
+  // background-color: blue;
 }
 // CARD CONTAINER
 #page-greener {
-  background-color: green;
+  // background-color: green;
   width: 60vh;
   padding: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   border-radius: 8px;
   margin-left: 4vh;
 }
@@ -25,7 +26,7 @@
 
 // RESERVATION CONTAINER
 #page-reder {
-  background-color: red;
+  // background-color: red;
   width: 120vh;
   margin-top: 16px;
   margin-left: 4vh;
@@ -37,17 +38,53 @@
   opacity: 1;
 }
 #table-yellower {
-  background-color: greenyellow;
-  justify-content: space-around;
+  // background-color: greenyellow;
+  display: contents;
 }
 #table-pinker {
-  background-color: hotpink;
+  // background-color: hotpink;
+  display: table-row;
 }
+.image-browner {
+  background-color: brown;
+  height: 28vh;
+  width: 58vh;
+  margin: 20px;
+}
+.black {
+  // background-color: black;
+  width: 124vh;
+  display: flex;
+}
+.left {
+  // background-color: indigo;
+  height: 67vh;
+  width: 124vh;
+}
+.right {
+  background-color: violet;
+  height: 60vh;
+  width: 80vh;
+  padding: 8px;
+  margin: 2vh;
+}
+.welcome-name {
+  // background-color: whitesmoke;
+  height: 12vh;
+}
+.l-blue {
+  height: 6vh;
+  width: 12vh;
+  // background-color: lightblue;
+  transform: rotate(-40deg);
+  margin-top: 2vh;
+}
+
 
 // svg for the welcome name
 svg {
   font-weight:bold;
-  max-width:400px;
+  max-width:370px;
   height:auto;
 }
 

@@ -47,51 +47,57 @@
   <%# card container %>
 
   <div class="page-oranger">
-
-    <div id="page-greener">
-      <p style="font-size:20px;" class="card-text">Name:  <%= @user.first_name %></p>
-      <p style="font-size:20px;" class="card-text">Last Name: <%= @user.last_name %></p>
-      <p style="font-size:20px;" class="card-text">Email: <%= @user.email %></p>
-      <p style="font-size:20px;" class="card-text">Country: <%= @user.location %></p>
-      <%# button edit %>
-      <div class="edit-btn">
-        <%= link_to edit_user_registration_path do%>
-        <button class="btn btn-light index-card-button">edit</button>
-        <% end %>
+    <div class="left">
+      <div class="black">
+        <div id="page-greener">
+          <p style="font-size:20px;" class="card-text">Name:  <%= @user.first_name.capitalize %></p>
+          <p style="font-size:20px;" class="card-text">Last Name: <%= @user.last_name.capitalize %></p>
+          <p style="font-size:20px;" class="card-text">Email: <%= @user.email %></p>
+          <p style="font-size:20px;" class="card-text">Location: <%= @user.location.capitalize %></p>
+          <%# button edit %>
+          <div class="edit-btn">
+            <%= link_to edit_user_registration_path do%>
+            <button class="btn btn-light index-card-button">edit</button>
+            <% end %>
+          </div>
+        </div>
+        <div class="image-browner">
+        <div class="l-blue">
+        <h1>this section is for avatar</h1>
+          <p>Your Boat</p>
+        </div>
+        </div>
+      </div>
+      <%# upcoming reservation card %>
+      <div id="page-reder">
+        <p> <strong>My Reservations </strong></p>
+        <table class="table table-hover" >
+          <div>
+            <thead>
+              <tr class="row" id="table-yellower">
+                <th scope="col">Yacht</th>
+                <th scope="col">Date</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @user_bookings.each do |booking|%>
+              <tr class="row"id="table-pinker">
+                <td scope="col"> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].name %> </td>
+                <td scope="col"><%= booking.start_date %> </td>
+                <td scope="col"> € <%= number_with_delimiter(@yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price, :delimiter => ',')  %> </td>
+                <td scope="col"><%= booking.status %> </td>
+                </tr>
+                <%end%>
+            </tbody>
+          </div>
+        </table>
       </div>
     </div>
-
-    <%# upcoming reservation card %>
-    <div class="card" id="page-reder" >
-      <p> <strong>My Reservations </strong></p>
-      <%# <table class="table table-hover" style="overflow-y: scroll;">
-        <thead>
-          <tr> %>
-          <div class="row" id="table-yellower">
-            <div> Yacht </div>
-            <div> Date</div>
-            <div> Price </div>
-            <div> Status </div>
-          </div>
-
-          <div class="row" id="table-pinker">
-            <% @user_bookings.each do |booking|%>
-
-            <tr>
-            <td scope="col"> <%= @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].name %> </td>
-            <td scope="col"><%= booking.start_date %> </td>
-            <td scope="col"> € <%= number_with_delimiter(@yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price, :delimiter => ',')  %> </td>
-            <td scope="col"><%= booking.status %> </td>
-            </tr>
-
-            <%end%>
-          </div>
-
-<%#
-        </tbody>
-      </table> %>
+    <div class="right">
+    <h2>this section is for the latest reservation yacht image</h2>
     </div>
-
   </div>
 </div>
 

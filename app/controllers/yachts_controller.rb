@@ -20,14 +20,6 @@ class YachtsController < ApplicationController
   end
 
   def index
-    @yachts = Yacht.all
-    @markers = @yachts.geocoded.map do |yacht|
-      {
-        lat: yacht.latitude,
-        lng: yacht.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
-      }
-    end
     if params[:query].present?
       ##pg search
       sql_query = "yachts.name ILIKE :query \
@@ -38,6 +30,13 @@ class YachtsController < ApplicationController
       # @yachts = Yacht.global_search(params[:query])
     else
       @yachts = Yacht.all
+    end
+    @markers = @yachts.geocoded.map do |yacht|
+      {
+        lat: yacht.latitude,
+        lng: yacht.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
+      }
     end
   end
 end

@@ -84,10 +84,12 @@
               <td scope="col"><%= booking.start_date %> </td>
               <% total_price = ((booking.end_date - booking.start_date).to_i) * @yachts.select { |yacht| yacht.id == booking.yacht_id}[0].price %>
               <td scope="col"> € <%= number_with_delimiter(total_price, :delimiter => ',')  %> </td>
-              <% if booking.status = "Accepted" %>
-                <td class="accepted-green" scope="col"><%= booking.status %> </td>
-              <% else %>
+              <% if booking.status == "Pending" %>
+                <td class="" scope="col"><%= booking.status %> </td>
+              <% elsif booking.status == "Rejected" %>
                 <td class="rejected-red" scope="col"><%= booking.status %> </td>
+              <% else %>
+                <td class="accepted-green" scope="col"><%= booking.status %> </td>
               <% end %>
                 </tr>
               <%end%>

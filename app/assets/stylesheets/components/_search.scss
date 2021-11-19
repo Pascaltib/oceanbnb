@@ -3,8 +3,12 @@
   width: 35%;
 }
 
+
 // search input
 .search-form-field {
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #c9c7c7;
+  }
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }

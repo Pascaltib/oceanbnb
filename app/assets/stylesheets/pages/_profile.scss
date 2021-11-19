@@ -1,7 +1,4 @@
-// containers
-// container of info and history
 .page-oranger{
-  // background-color: orange;
   height: 70vh;
   display: flex;
 }
@@ -9,40 +6,27 @@
   height: 83vh;
   padding-left: 40px;
   padding-right: 40px;
-  // background-color: blue;
 }
 // CARD CONTAINER
 #page-greener {
-  // background-color: green;
-  width: 60vh;
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
   border-radius: 8px;
-  margin-left: 4vh;
 }
-// #page-greener:hover {
-//   transform: scale(1.1);
-// }
 
 // RESERVATION CONTAINER
 #page-reder {
-  // background-color: red;
-  width: 120vh;
-  margin-top: 16px;
-  margin-left: 4vh;
-  padding: 20px;
   border-radius: 8px;
-  height: 31vh;
+  box-shadow: 0px 0px 5px rgb(205, 205, 205);
+  transition: 0.5s;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
 }
-#page-reder:hover {
-  opacity: 1;
-}
+
 #table-yellower {
-  // background-color: greenyellow;
   display: contents;
 }
 #table-pinker {
-  // background-color: hotpink;
   display: table-row;
 }
 .image-browner {
@@ -52,12 +36,10 @@
   margin: 20px;
 }
 .black {
-  // background-color: black;
   width: 124vh;
   display: flex;
 }
 .left {
-  // background-color: indigo;
   height: 67vh;
   width: 124vh;
 }
@@ -68,54 +50,63 @@
   padding: 8px;
   margin: 2vh;
 }
-.welcome-name {
-  // background-color: whitesmoke;
-  height: 12vh;
-}
+
 .l-blue {
   height: 6vh;
   width: 12vh;
-  // background-color: lightblue;
   transform: rotate(-40deg);
   margin-top: 2vh;
 }
 
-
-// svg for the welcome name
 svg {
   font-weight:bold;
   max-width:370px;
   height:auto;
 }
 
+.profile-cards-container{
+  width: 80%;
+}
+.profile-individual-card{
+  border-radius: 8px;
+  font-size: 12px;
+  height: 40vh;
+  box-shadow: 0px 0px 5px rgb(205, 205, 205);
+  transition: 0.5s;
+  margin: 0 0 20px 0;
+}
+
+.boat-individual-card{
+  height: 40vh;
+  border-radius: 8px;
+  font-size: 12px;
+  box-shadow: 0px 0px 5px rgb(205, 205, 205);
+  transition: 0.5s;
+  overflow: hidden;
+}
 
 
+.profile-boat-card-body{
+  padding: 0;
+  border-radius: 8px;
+}
+
+.profile-boat-image{
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
+.welcome-name{
+  text-align: center;
+  padding-top: 30px;
+  color: #00aeff;
+}
 
-// css for the glowing name
-// .welcome-name {
-//   background: 50% 100% / 50% 50% no-repeat
-//               radial-gradient(ellipse at bottom, rgb(129, 128, 128), transparent, transparent);
-//   -webkit-background-clip: text;
-//   background-clip: text;
-//   color: transparent;
-//   font-size: 10vw;
-//   font-family: "Source Sans Pro", sans-serif;
-//   animation: reveal 3000ms ease-in-out forwards 200ms,
-//              glow 2500ms linear infinite 2000ms;
-
-//   @keyframes reveal {
-//     80%{
-//       letter-spacing: 8px;
-//     }
-//     100% {
-//       background-size: 300% 300%;
-//     }
-//   }
-//   @keyframes glow {
-//     40% {
-//       text-shadow: 0 0 8px #fff;
-//     }
-//   }
-// }
+.reservations-container{
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 10px;
+}

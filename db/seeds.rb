@@ -44,8 +44,8 @@ User.create!(
   {
     email: "admin@gmail.com",
     password: "password",
-    first_name: "Sally",
-    last_name: "Secret",
+    first_name: "Miguel",
+    last_name: "Rodríguez",
     location: "Madrid"
   }
 )

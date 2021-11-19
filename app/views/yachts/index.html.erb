@@ -18,7 +18,7 @@
         <% end %>
         <% @yachts.each do |yacht| %>
         <%= link_to yacht_path(yacht) do %>
-        <div class="col-12 col-md-6 col-lg-12">
+        <div class="col-12 col-md-6 col-lg-12 yachts-card-separation">
           <div class="yacht-card">
             <img src="<%= yacht.image_url %>" class="card-img-top" alt="...">
             <div class="card-body">
@@ -48,7 +48,7 @@
       </div>
     <div class="index-map-container col-0 col-8">
       <div class="second-show-card bg-white rounded shadow" id="map-container">
-        <div id="map" style="width: 100%; height: 900px;"
+        <div id="map" style="width: 100%; height: 120vh;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV["MAPBOX_API_KEY"] %>">
         </div>

@@ -11,7 +11,7 @@
       <% end %>
         <% @yachts.each do |yacht| %>
         <%= link_to yacht_path(yacht) do %>
-        <div class="col-12 col-md-6 col-lg-12">
+        <div class="col-12 col-md-6 col-lg-12 yachts-card-separation">
           <div class="yacht-card">
             <img src="<%= yacht.image_url %>" class="card-img-top" alt="...">
             <div class="card-body">

@@ -28,15 +28,53 @@ class YachtsController < ApplicationController
       "
       @yachts = Yacht.where(sql_query, query: "%#{params[:query]}%")
 
-    else
-      @yachts = Yacht.all
-    end
-    @markers = @yachts.geocoded.map do |yacht|
+      @markers = @yachts.geocoded.map do |yacht|
       {
         lat: yacht.latitude,
         lng: yacht.longitude,
         info_window: render_to_string(partial: "info_window", locals: { yacht: yacht })
       }
+      end
+
+      @text_input = params[:query]
+      if @text_input.match?(/(wifi|restaurant|pool|jacuzzi)/i)
+        @markers = Yacht.all.geocoded.map do |yacht|
+        {
+        lat: yacht.latitude,
+        lng: yacht.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht })
+        }
+        end
+        case @text_input
+        when "wifi"
+          ammenities = Ammenity.all.select do |element|
+            element.wifi
+          end
+        when "restaurant"
+          ammenities = Ammenity.all.select do |element|
+            element.restaurant
+          end
+        when "pool"
+          ammenities = Ammenity.all.select do |element|
+            element.pool
+          end
+        when "jacuzzi"
+          ammenities = Ammenity.all.select do |element|
+            element.jacuzzi
+          end
+        end
+        @yachts = []
+        Yacht.all.each do |x|
+          ammenities.each do |y|
+            if x.id == y.yacht_id
+              @yachts << x
+            end
+          end
+        end
+      end
+    else
+      @yachts = Yacht.all
     end
+
   end
 end

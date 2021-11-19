@@ -15,7 +15,14 @@
 @import "pages/index";
 @import "yachts/index";
 
-body{
+#container-special{
   position: relative;
   min-height: 110vh;
+  margin-bottom: 0;
+  height: fit-content;
+  padding-bottom: 85px;
+}
+
+body{
+  position:relative;
 }

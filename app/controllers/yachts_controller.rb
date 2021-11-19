@@ -27,7 +27,7 @@ class YachtsController < ApplicationController
         OR yachts.location ILIKE :query \
       "
       @yachts = Yacht.where(sql_query, query: "%#{params[:query]}%")
-      # @yachts = Yacht.global_search(params[:query])
+
     else
       @yachts = Yacht.all
     end
@@ -35,7 +35,7 @@ class YachtsController < ApplicationController
       {
         lat: yacht.latitude,
         lng: yacht.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht }),
+        info_window: render_to_string(partial: "info_window", locals: { yacht: yacht })
       }
     end
   end

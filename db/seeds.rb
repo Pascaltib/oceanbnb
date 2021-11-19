@@ -49,4 +49,13 @@ User.create!(
     location: "Madrid"
   }
 )
+User.create!(
+  {
+    email: "boss@gmail.com",
+    password: "password",
+    first_name: "Boss",
+    last_name: "Man",
+    location: "Madrid"
+  }
+)
 puts "Database recreated!"

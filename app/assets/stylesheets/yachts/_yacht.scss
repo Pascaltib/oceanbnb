@@ -63,6 +63,10 @@ body{
   transition: 0.5s;
 }
 
+.yachts-card-separation{
+  margin-bottom: 10%;
+}
+
 .yacht-card:hover{
   box-shadow: 0px 0px 50px rgb(192, 192, 192);
   transition: 0.5s;
@@ -71,6 +75,16 @@ body{
     opacity: 0.9;
     transition: 0.5s;
   }
+}
+
+.marina-text{
+  font-size: 14px;
+  color: #333333;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80%;
 }
 
 .card-img-top{
@@ -129,29 +143,34 @@ body{
   z-index: 0;
 }
 
+.index-card-submit-button{
+  width: 80%;
+  margin-top: 2vh;
+  padding: 1vh 2.14vh;
+  background-color: rgb(232, 232, 232);
+  border-radius: 24px;
+}
+
 .index-card-button{
-  margin-top: 15px;
-  padding: 8px 24px;
+  margin-top: 2vh;
+  padding: 1vh 2.3vh;
   background-color: rgb(232, 232, 232);
   border-radius: 24px;
   width: 15vh;
 }
 
 .index-map-container{
-  z-index:100;
   border-radius: 8px;
   position: fixed;
   width: 100%;
   left: 35%;
-  top: 1%;
-
+  top: 7vh;
+  z-index:0;
 }
 
 .second-show-card{
   border-radius: 8px;
 }
-
-
 
 @media only screen and (max-width: 1100px) {
   .index-map-container{

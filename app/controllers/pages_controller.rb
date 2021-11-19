@@ -15,7 +15,12 @@ class PagesController < ApplicationController
     @user = current_user
     # added to access the yatch to profile
     @user_bookings = Booking.all.select { |booking| booking.user_id == @user.id }
-    @image_url = Yacht.find(Booking.last.yacht_id).image_url
+    if Booking.last
+      @image_url = Yacht.find(Booking.last.yacht_id).image_url
+
+    else
+      @image_url = Yacht.all.sample.image_url
+    end
     # @user.yachts = date_reserved??
   end
 end

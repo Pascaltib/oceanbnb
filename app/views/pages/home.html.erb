@@ -31,6 +31,27 @@
   </div>
 
 </div>
+<% if @user %>
+  <% if @user.first_name == "Boss" %>
+    <div>
+      Pending bookings:
+      <% @user_bookings.each do |booking|%>
+        <div class="row">
+          <div>
+            User: <%= booking.user_id %> - Yacht: <%= booking.yacht_id%> Status: <%= booking.status%>
+          </div>
+          <%= form_tag accept_booking_path(booking), method: :patch, class: "" do %>
+          <%= submit_tag "Accept", class: "btn btn-primary submit-search"  %>
+          <% end %>
+          <%= form_tag reject_booking_path(booking), method: :patch, class: "" do %>
+          <%= submit_tag "Reject", class: "btn btn-primary submit-search"  %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
 
 
 <div class="home-card-container">

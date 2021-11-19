@@ -16,11 +16,17 @@ class BookingsController < ApplicationController
   end
 
   def accept
-
+    booking = Booking.find(params[:id])
+    booking.status = "Accepted"
+    booking.save!
+    redirect_to "/"
   end
 
   def reject
-
+    booking = Booking.find(params[:id])
+    booking.status = "Rejected"
+    booking.save!
+    redirect_to "/"
   end
 
   private

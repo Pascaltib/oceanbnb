@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
     @yacht1 = Yacht.all.sample
     @yacht2 = Yacht.all.sample
+
+    @user = current_user
+    @user_bookings = Booking.all
   end
 
   def profile
@@ -11,7 +14,7 @@ class PagesController < ApplicationController
     @yachts = Yacht.all
     @user = current_user
     # added to access the yatch to profile
-    @user_bookings = Booking.all.select { |booking| booking.user_id == @user.id}
+    @user_bookings = Booking.all.select { |booking| booking.user_id == @user.id }
     # @user.yachts = date_reserved??
   end
 end

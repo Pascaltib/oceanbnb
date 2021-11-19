@@ -21,6 +21,9 @@ class YachtsController < ApplicationController
 
   def index
     if params[:query].present?
+      # if params[:query].match?(/(wifi|restaurant|pool|jacuzzi)/i)
+      #   @yachts =
+      # end
       ##pg search
       sql_query = "yachts.name ILIKE :query \
         OR yachts.description ILIKE :query \

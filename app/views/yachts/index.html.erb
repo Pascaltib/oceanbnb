@@ -4,11 +4,18 @@
   <div class="full-page-container row justify-content-evenly" style="padding-bottom: 9vh;">
     <div class="yacht-list-container col-sm-12 col-lg-4">
       <div class="row justify-content-evenly">
-      <% if @yachts.length == 0 %>
-        <div class="col-12 col-md-6 col-lg-12">
-              <h5 class="card-title text-center">No matches...</h5>
+
+        <div>
+        <strong style="color: #333333"><i class="fas fa-wifi"></i>&nbsp &nbsp WIFI</strong>
+        <strong style="color: #333333"><i class="fas fa-utensils"></i>&nbsp &nbsp Restaurant</strong>
+        <strong style="color: #333333"><i class="fas fa-swimming-pool"></i>&nbsp &nbsp Pool</strong>
+        <strong style="color: #333333"><i class="fas fa-hot-tub"></i>&nbsp &nbsp Jacuzzi</strong>
         </div>
-      <% end %>
+        <% if @yachts.length == 0 %>
+          <div class="col-12 col-md-6 col-lg-12">
+                <h5 class="card-title text-center">No matches...</h5>
+          </div>
+        <% end %>
         <% @yachts.each do |yacht| %>
         <%= link_to yacht_path(yacht) do %>
         <div class="col-12 col-md-6 col-lg-12">

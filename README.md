@@ -1,5 +1,7 @@
 Oceanbnb is a yacht rental MVP as a web application. 
 
+Demo video: 
+
 The tech stack for this project is Ruby on Rails, using PostgreSQL as a database. We use a map API to display an interactive map of our listings. This web application includes user authentification and it includes a user and administrator interfaces.
 
 Customer user journeys: 

@@ -1,7 +1,7 @@
 Oceanbnb is a yacht rental MVP as a web application. 
 
 Demo video
-[1]: https://drive.google.com/file/d/18vjd4gUNaha2nG6_vgkt7Z_dFqS9OYwj/view?usp=sharing "Demo Video"
+[Demo video]([https://duckduckgo.com](https://drive.google.com/file/d/18vjd4gUNaha2nG6_vgkt7Z_dFqS9OYwj/view?usp=sharing))
 
 The tech stack for this project is Ruby on Rails, using PostgreSQL as a database. We use a map API to display an interactive map of our listings. This web application includes user authentification and it includes a user and administrator interfaces.
 
